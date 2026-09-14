@@ -1,0 +1,1987 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>KrishiSetu</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <div class="logo">
+        🌾 KrishiSetu
+    </div>
+
+
+    <div class="nav-right">
+
+        <select id="languageSelect">
+
+            <option value="en">English</option>
+
+            <option value="mr">मराठी</option>
+
+            <option value="hi">हिंदी</option>
+
+        </select>
+
+
+        <span class="notification">
+            🔔
+        </span>
+
+
+        <span class="profile">
+            👤 Ramesh
+        </span>
+
+    </div>
+
+</header>
+
+
+
+<!-- ================= HOME ================= -->
+
+<section id="home" class="home">
+
+
+    <div class="home-content">
+
+        <div class="home-icon">
+            🌾
+        </div>
+
+
+        <h1 id="title">
+            Smart Market Intelligence for Farmers
+        </h1>
+
+
+        <p id="description">
+
+            Connecting farmers with better prices,
+            trusted buyers and smarter decisions.
+
+        </p>
+
+
+        <div class="home-buttons">
+
+            <button
+                class="primary-btn"
+                onclick="openFarmerDashboard()"
+                id="farmerButton">
+
+                👨‍🌾 Farmer Dashboard
+
+            </button>
+
+
+            <button
+                class="secondary-btn"
+                onclick="openBuyerDashboard()"
+                id="buyerButton">
+
+                🏢 Buyer Dashboard
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= FARMER DASHBOARD ================= -->
+
+<section
+    id="dashboard"
+    class="dashboard hidden">
+
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+
+        <div class="sidebar-logo">
+
+            🌾 KrishiSetu
+
+        </div>
+
+
+        <nav>
+
+
+            <button
+                class="menu active"
+                onclick="showSection('overview')">
+
+                🏠
+                <span>Dashboard</span>
+
+            </button>
+
+
+            <button
+                class="menu"
+                onclick="showSection('markets')">
+
+                📊
+                <span>Market Prices</span>
+
+            </button>
+
+
+            <button
+                class="menu"
+                onclick="showSection('buyers')">
+
+                👥
+                <span>Buyers</span>
+
+            </button>
+
+
+            <button
+                class="menu"
+                onclick="showSection('lots')">
+
+                📦
+                <span>My Lots</span>
+
+            </button>
+
+
+            <button
+                class="menu"
+                onclick="showSection('offers')">
+
+                💰
+                <span>Offers</span>
+<button onclick="showSection('grievance')">
+    ⚖️ Grievance
+</button>
+
+            </button>
+
+
+            <button
+                class="menu"
+                onclick="showSection('storage')">
+
+                📡
+                <span>Storage Monitor</span>
+
+            </button>
+
+
+        </nav>
+
+
+        <button
+            class="logout"
+            onclick="goHome()">
+
+            ← Home
+
+        </button>
+
+
+    </aside>
+
+
+
+    <!-- MAIN DASHBOARD -->
+
+    <main class="dashboard-main">
+
+
+        <!-- OVERVIEW -->
+
+        <div
+            id="overview"
+            class="dashboard-section">
+
+
+            <div class="welcome">
+
+                <div>
+
+                    <p class="small-text">
+                        Welcome back
+                    </p>
+
+                    <h1>
+                        Good Morning, Ramesh 👋
+                    </h1>
+
+                    <p>
+                        Here's your market summary for today.
+                    </p>
+
+                </div>
+
+
+                <div class="date">
+
+                    📅 14 September 2026
+
+                </div>
+
+            </div>
+
+
+
+            <!-- STAT CARDS -->
+
+            <div class="stats">
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon onion">
+                        🧅
+                    </div>
+
+                    <div>
+
+                        <p>My Produce</p>
+
+                        <h2>
+                            100 q
+                        </h2>
+
+                        <span>
+                            Grade A Onion
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon money">
+                        ₹
+                    </div>
+
+                    <div>
+
+                        <p>Current Price</p>
+
+                        <h2>
+                            ₹2,450
+                        </h2>
+
+                        <span class="positive">
+                            ↑ 4.8% this week
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon ai">
+                        🤖
+                    </div>
+
+                    <div>
+
+                        <p>AI Recommendation</p>
+
+                        <h2>
+                            WAIT
+                        </h2>
+
+                        <span>
+                            Expected ₹2,580
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <div
+                    class="stat-card clickable"
+                    onclick="showSection('storage')">
+
+
+                    <div class="stat-icon sensor">
+                        📡
+                    </div>
+
+                    <div>
+
+                        <p>Storage</p>
+
+                        <h2 class="safe">
+                            SAFE
+                        </h2>
+
+                        <span>
+                            28.4°C · 72%
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- CHART -->
+
+            <div class="content-grid">
+
+
+                <div class="panel chart-panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <h2>
+                                📈 Market Price Trend
+                            </h2>
+
+                            <p>
+                                Onion · Pune Market
+                            </p>
+
+                        </div>
+
+
+                        <select>
+
+                            <option>
+                                Last 7 Days
+                            </option>
+
+                            <option>
+                                Last 30 Days
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="chart">
+
+                        <div class="y-label">
+                            ₹2,600
+                        </div>
+
+                        <div class="chart-area">
+
+                            <svg
+                                viewBox="0 0 700 250"
+                                preserveAspectRatio="none">
+
+
+                                <polyline
+
+                                    points="
+                                    0,180
+                                    100,160
+                                    200,175
+                                    300,130
+                                    400,145
+                                    500,90
+                                    600,105
+                                    700,60"
+
+                                    fill="none"
+
+                                    stroke="#16a34a"
+
+                                    stroke-width="5"
+
+                                    stroke-linecap="round"
+
+                                    stroke-linejoin="round"
+
+                                />
+
+
+                                <circle
+                                    cx="700"
+                                    cy="60"
+                                    r="7"
+                                    fill="#16a34a"
+                                />
+
+
+                            </svg>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="chart-labels">
+
+                        <span>
+                            Sep 8
+                        </span>
+
+                        <span>
+                            Sep 9
+                        </span>
+
+                        <span>
+                            Sep 10
+                        </span>
+
+                        <span>
+                            Sep 11
+                        </span>
+
+                        <span>
+                            Sep 12
+                        </span>
+
+                        <span>
+                            Sep 13
+                        </span>
+
+                        <span>
+                            Sep 14
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- AI CARD -->
+
+                <div class="panel ai-panel">
+
+                    <div class="ai-title">
+
+                        <div class="ai-circle">
+                            🤖
+                        </div>
+
+                        <div>
+
+                            <h2>
+                                AI Selling Advisor
+                            </h2>
+
+                            <p>
+                                Smart recommendation
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="recommendation">
+
+                        <div class="recommendation-main">
+
+                            🟢
+
+                            <strong>
+                                WAIT 3–5 DAYS
+                            </strong>
+
+                        </div>
+
+
+                        <p>
+
+                            Expected price:
+
+                            <strong>
+                                ₹2,550 – ₹2,600/q
+                            </strong>
+
+                        </p>
+
+                    </div>
+
+
+                    <h3>
+                        Why?
+                    </h3>
+
+
+                    <ul>
+
+                        <li>
+                            Market arrivals ↓ 12%
+                        </li>
+
+                        <li>
+                            Buyer demand ↑ 15%
+                        </li>
+
+                        <li>
+                            Price trend ↑ 4.8%
+                        </li>
+
+                        <li>
+                            Storage condition is safe
+                        </li>
+
+                    </ul>
+
+
+                    <button
+                        class="primary-btn full">
+
+                        View Detailed Analysis
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- MARKETS -->
+
+            <div class="panel market-panel">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <h2>
+                            📍 Nearby Markets
+                        </h2>
+
+                        <p>
+                            Compare prices and net realisation
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        class="outline-btn">
+
+                        View All
+
+                    </button>
+
+                </div>
+
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Market
+                            </th>
+
+                            <th>
+                                Price / q
+                            </th>
+
+                            <th>
+                                Distance
+                            </th>
+
+                            <th>
+                                Transport
+                            </th>
+
+                            <th>
+                                Net Realisation
+                            </th>
+
+                            <th>
+                                Status
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+
+                        <tr>
+
+                            <td>
+                                <strong>
+                                    Narayangaon
+                                </strong>
+                            </td>
+
+                            <td>
+                                ₹2,510
+                            </td>
+
+                            <td>
+                                58 km
+                            </td>
+
+                            <td>
+                                ₹70
+                            </td>
+
+                            <td>
+                                <strong class="green-text">
+                                    ₹2,440
+                                </strong>
+                            </td>
+
+                            <td>
+                                <span class="badge best">
+                                    BEST
+                                </span>
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                <strong>
+                                    Manchar
+                                </strong>
+                            </td>
+
+                            <td>
+                                ₹2,480
+                            </td>
+
+                            <td>
+                                42 km
+                            </td>
+
+                            <td>
+                                ₹50
+                            </td>
+
+                            <td>
+                                <strong>
+                                    ₹2,430
+                                </strong>
+                            </td>
+
+                            <td>
+                                <span class="badge">
+                                    Good
+                                </span>
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                <strong>
+                                    Pune
+                                </strong>
+                            </td>
+
+                            <td>
+                                ₹2,450
+                            </td>
+
+                            <td>
+                                25 km
+                            </td>
+
+                            <td>
+                                ₹30
+                            </td>
+
+                            <td>
+                                <strong>
+                                    ₹2,420
+                                </strong>
+                            </td>
+
+                            <td>
+                                <span class="badge">
+                                    Good
+                                </span>
+                            </td>
+
+                        </tr>
+
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- MARKET PAGE -->
+
+<div
+    id="markets"
+    class="dashboard-section hidden">
+
+    <div class="page-heading">
+
+        <div>
+
+            <h1>
+                📊 Market Intelligence
+            </h1>
+
+            <p>
+                Compare prices, transport costs and
+                expected net realisation.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- CALCULATOR -->
+
+    <div class="market-calculator">
+
+        <div class="input-group">
+
+            <label>
+                Select Crop
+            </label>
+
+            <select id="cropSelect">
+
+                <option value="onion">
+                    🧅 Onion
+                </option>
+
+                <option value="tomato">
+                    🍅 Tomato
+                </option>
+
+                <option value="potato">
+                    🥔 Potato
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div class="input-group">
+
+            <label>
+                Quantity (Quintals)
+            </label>
+
+            <input
+                type="number"
+                id="quantityInput"
+                value="100"
+                min="1">
+
+        </div>
+
+
+        <button
+            class="primary-btn calculate-btn"
+            onclick="calculateMarket()">
+
+            🔍 Find Best Market
+
+        </button>
+
+    </div>
+
+
+    <!-- RESULT -->
+
+    <div
+        id="marketResult"
+        class="market-result hidden">
+
+
+        <div class="result-header">
+
+            <div>
+
+                <h2>
+                    🏆 Best Market
+                </h2>
+
+                <p>
+                    Based on current price
+                    and transport cost
+                </p>
+
+            </div>
+
+
+            <span class="best-market-badge">
+                BEST NET REALISATION
+            </span>
+
+        </div>
+
+
+        <div class="best-market">
+
+            <div>
+
+                <h1 id="bestMarketName">
+                    Narayangaon
+                </h1>
+
+                <p>
+                    Recommended destination
+                </p>
+
+            </div>
+
+
+            <div class="best-price">
+
+                <span>
+                    Net Price
+                </span>
+
+                <strong id="bestNetPrice">
+                    ₹2,440 / q
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="earning-box">
+
+            <div>
+
+                <span>
+                    Expected Revenue
+                </span>
+
+                <strong id="expectedRevenue">
+                    ₹2,44,000
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    Extra vs Pune
+                </span>
+
+                <strong
+                    id="extraEarning"
+                    class="green-text">
+
+                    +₹2,000
+
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- MARKET COMPARISON -->
+
+        <h2 class="comparison-title">
+            Market Comparison
+        </h2>
+
+
+        <div
+            id="marketCards"
+            class="market-comparison">
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+      <!-- BUYERS -->
+
+<div
+    id="buyers"
+    class="dashboard-section hidden">
+
+    <div class="page-heading">
+
+        <div>
+
+            <h1>
+                👥 Verified Buyers
+            </h1>
+
+            <p>
+                Buyers matched with your produce.
+            </p>
+
+        </div>
+
+        <span class="live-badge">
+            ✓ VERIFIED NETWORK
+        </span>
+
+    </div>
+
+
+    <div class="buyer-grid">
+
+
+        <!-- BUYER 1 -->
+
+        <div class="buyer-card">
+
+            <div class="buyer-top">
+
+                <div class="buyer-icon">
+                    🏢
+                </div>
+
+                <span class="verified">
+                    ✓ Verified
+                </span>
+
+            </div>
+
+
+            <h2>
+                Maharashtra Fresh Foods
+            </h2>
+
+
+            <p>
+                🧅 Onion · Grade A
+            </p>
+
+
+            <div class="buyer-detail">
+
+                <span>
+                    Required Quantity
+                </span>
+
+                <strong>
+                    50–150 q
+                </strong>
+
+            </div>
+
+
+            <div class="buyer-detail">
+
+                <span>
+                    Offered Price
+                </span>
+
+                <strong class="green-text">
+                    ₹2,550 / q
+                </strong>
+
+            </div>
+
+
+            <div class="buyer-detail">
+
+                <span>
+                    Payment
+                </span>
+
+                <strong>
+                    Within 2 days
+                </strong>
+
+            </div>
+
+
+            <div class="trust">
+
+                ⭐ Trust Score: 94/100
+
+            </div>
+
+
+            <button
+                class="primary-btn full"
+                onclick="viewOffer(
+                    'Maharashtra Fresh Foods',
+                    2550
+                )">
+
+                View Offer
+
+            </button>
+
+        </div>
+
+
+
+        <!-- BUYER 2 -->
+
+        <div class="buyer-card">
+
+            <div class="buyer-top">
+
+                <div class="buyer-icon">
+                    🏭
+                </div>
+
+                <span class="verified">
+                    ✓ Verified
+                </span>
+
+            </div>
+
+
+            <h2>
+                FreshFarm Processing
+            </h2>
+
+
+            <p>
+                🧅 Onion · Grade A/B
+            </p>
+
+
+            <div class="buyer-detail">
+
+                <span>
+                    Required Quantity
+                </span>
+
+                <strong>
+                    50–200 q
+                </strong>
+
+            </div>
+
+
+            <div class="buyer-detail">
+
+                <span>
+                    Offered Price
+                </span>
+
+                <strong class="green-text">
+                    ₹2,500 / q
+                </strong>
+
+            </div>
+
+
+            <div class="buyer-detail">
+
+                <span>
+                    Payment
+                </span>
+
+                <strong>
+                    Within 3 days
+                </strong>
+
+            </div>
+
+
+            <div class="trust">
+
+                ⭐ Trust Score: 89/100
+
+            </div>
+
+
+            <button
+                class="primary-btn full"
+                onclick="viewOffer(
+                    'FreshFarm Processing',
+                    2500
+                )">
+
+                View Offer
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- OFFER POPUP -->
+
+    <div
+        id="offerModal"
+        class="modal hidden">
+
+
+        <div class="modal-box">
+
+            <button
+                class="modal-close"
+                onclick="closeOffer()">
+
+                ×
+
+            </button>
+
+
+            <div class="modal-icon">
+                💰
+            </div>
+
+
+            <h2 id="offerBuyer">
+                Buyer Name
+            </h2>
+
+
+            <p>
+                Verified buyer offer
+            </p>
+
+
+            <div class="modal-price">
+
+                <span>
+                    Offered Price
+                </span>
+
+                <strong id="offerPrice">
+                    ₹2,550 / q
+                </strong>
+
+            </div>
+
+
+            <div class="modal-info">
+
+                <div>
+                    📦 Quantity: 100 quintals
+                </div>
+
+                <div>
+                    🚚 Buyer pickup available
+                </div>
+
+                <div>
+                    💳 Payment: Within 2 days
+                </div>
+
+                <div>
+                    ✓ Buyer verified
+                </div>
+
+            </div>
+
+
+            <button
+                class="primary-btn full"
+                onclick="acceptBuyerOffer()">
+
+                ✓ Accept Offer
+
+            </button>
+
+
+            <button
+                class="outline-btn full"
+                onclick="closeOffer()">
+
+                Cancel
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+        <!-- LOTS -->
+
+        <div
+            id="lots"
+            class="dashboard-section hidden">
+
+            <h1>
+                📦 My Lots
+            </h1>
+
+            <p>
+                Manage your produce lots.
+            </p>
+
+
+            <div class="lot-card">
+
+                <div>
+
+                    <span class="lot-id">
+                        LOT #MH00127
+                    </span>
+
+                    <h2>
+                        🧅 Onion · Grade A
+                    </h2>
+
+                    <p>
+                        Quantity: 100 Quintals
+                    </p>
+
+                </div>
+
+
+                <span class="status waiting">
+                    Waiting for Buyers
+                </span>
+
+            </div>
+
+
+            <button class="primary-btn">
+
+                + Create New Lot
+
+            </button>
+
+        </div>
+
+
+
+     <!-- OFFERS -->
+
+<div
+    id="offers"
+    class="dashboard-section hidden">
+
+    <div class="page-heading">
+
+        <div>
+
+            <h1>
+                💳 Transactions
+            </h1>
+
+            <p>
+                Track your produce sale from offer to payment.
+            </p>
+
+        </div>
+
+        <span class="live-badge">
+            ● TRANSACTION TRACKING
+        </span>
+
+    </div>
+
+
+    <!-- TRANSACTION STATUS -->
+
+    <div class="transaction-status">
+
+        <div class="status-step active">
+            <span>✓</span>
+            <p>Offer</p>
+        </div>
+
+        <div class="status-line active"></div>
+
+        <div class="status-step active">
+            <span>✓</span>
+            <p>Accepted</p>
+        </div>
+
+        <div class="status-line"></div>
+
+        <div class="status-step">
+            <span>3</span>
+            <p>Pickup</p>
+        </div>
+
+        <div class="status-line"></div>
+
+        <div class="status-step">
+            <span>4</span>
+            <p>Payment</p>
+        </div>
+
+    </div>
+
+
+    <!-- TRANSACTION CARD -->
+
+    <div class="transaction-card">
+
+        <div class="transaction-header">
+
+            <div>
+
+                <span class="transaction-label">
+                    TRANSACTION ID
+                </span>
+
+                <h2>
+                    KS-2026-00127
+                </h2>
+
+            </div>
+
+            <span class="transaction-badge">
+                🟢 OFFER ACCEPTED
+            </span>
+
+        </div>
+
+
+        <div class="transaction-grid">
+
+            <div>
+
+                <span>
+                    Buyer
+                </span>
+
+                <strong id="transactionBuyer">
+                    Maharashtra Fresh Foods
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    Produce
+                </span>
+
+                <strong>
+                    🧅 Onion — Grade A
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    Quantity
+                </span>
+
+                <strong>
+                    100 quintals
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    Price
+                </span>
+
+                <strong>
+                    ₹2,550 / q
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    Total Value
+                </span>
+
+                <strong class="big-green">
+                    ₹2,55,000
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    Payment
+                </span>
+
+                <strong>
+                    ⏳ Pending
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- LOGISTICS -->
+
+        <div class="logistics-section">
+
+            <div>
+
+                <h3>
+                    🚚 Logistics
+                </h3>
+
+                <p>
+                    Buyer pickup has been requested.
+                </p>
+
+            </div>
+
+
+            <span class="logistics-status">
+                Pickup Pending
+            </span>
+
+        </div>
+
+
+        <button
+            class="primary-btn"
+            onclick="confirmPickup()">
+
+            🚚 Confirm Pickup Ready
+
+        </button>
+
+    </div>
+
+
+    <!-- PAYMENT -->
+
+    <div
+        id="paymentBox"
+        class="payment-box">
+
+        <div class="payment-icon">
+            💳
+        </div>
+
+        <div>
+
+            <h3>
+                Payment Tracking
+            </h3>
+
+            <p id="paymentText">
+                Payment will be released after
+                buyer confirms delivery.
+            </p>
+
+        </div>
+
+        <span
+            id="paymentStatus"
+            class="payment-pending">
+
+            PENDING
+
+        </span>
+
+    </div>
+
+
+</div>
+
+
+
+       <!-- STORAGE / IoT -->
+
+<div
+    id="storage"
+    class="dashboard-section hidden">
+
+    <div class="page-heading">
+
+        <div>
+
+            <h1>
+                📡 Smart Storage Monitor
+            </h1>
+
+            <p>
+                Monitor storage conditions and prevent post-harvest losses.
+            </p>
+
+        </div>
+
+        <span class="live-badge">
+            ● LIVE SIMULATION
+        </span>
+
+    </div>
+
+
+    <!-- SENSOR CARDS -->
+
+    <div class="sensor-grid">
+
+
+        <div class="sensor-card">
+
+            <div class="sensor-big">
+                🌡️
+            </div>
+
+            <p>
+                Temperature
+            </p>
+
+            <h1 id="temperatureValue">
+                28.4°C
+            </h1>
+
+            <span
+                id="temperatureStatus"
+                class="safe">
+
+                ● Normal
+
+            </span>
+
+        </div>
+
+
+        <div class="sensor-card">
+
+            <div class="sensor-big">
+                💧
+            </div>
+
+            <p>
+                Humidity
+            </p>
+
+            <h1 id="humidityValue">
+                72%
+            </h1>
+
+            <span
+                id="humidityStatus"
+                class="safe">
+
+                ● Safe
+
+            </span>
+
+        </div>
+
+
+        <div class="sensor-card">
+
+            <div class="sensor-big">
+                📡
+            </div>
+
+            <p>
+                Sensor Status
+            </p>
+
+            <h1 class="safe">
+                ONLINE
+            </h1>
+
+            <span>
+                Simulated ESP32
+            </span>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- STORAGE CONDITION -->
+
+    <div
+        id="storageCondition"
+        class="storage-alert">
+
+        <h2>
+            🟢 Storage Condition Safe
+        </h2>
+
+        <p>
+            Temperature and humidity are currently
+            within the recommended storage range.
+        </p>
+
+    </div>
+
+
+    <!-- SIMULATOR -->
+
+    <div class="panel simulator-panel">
+
+        <div class="panel-header">
+
+            <div>
+
+                <h2>
+                    🧪 Sensor Simulator
+                </h2>
+
+                <p>
+                    Simulate readings from a future IoT device.
+                </p>
+
+            </div>
+
+
+            <button
+                class="primary-btn"
+                onclick="simulateSensor()">
+
+                🔄 Generate New Reading
+
+            </button>
+
+        </div>
+
+
+        <div class="last-reading">
+
+            Last updated:
+
+            <strong id="lastUpdated">
+                Just now
+            </strong>
+
+        </div>
+
+    </div>
+
+
+    <!-- RECOMMENDATION -->
+
+    <div class="panel">
+
+        <h2>
+            🤖 Storage Recommendation
+        </h2>
+
+        <p
+            id="storageRecommendation"
+            class="storage-recommendation">
+
+            Current conditions are suitable for storing onions.
+            Continue monitoring temperature and humidity.
+
+        </p>
+
+    </div>
+
+
+    <!-- ARCHITECTURE -->
+
+    <div class="iot-flow">
+
+        <span>
+            🌡️ DHT11
+        </span>
+
+        <span>→</span>
+
+        <span>
+            📟 ESP32
+        </span>
+
+        <span>→</span>
+
+        <span>
+            📡 Wi-Fi
+        </span>
+
+        <span>→</span>
+
+        <span>
+            ☁️ KrishiSetu
+        </span>
+
+    </div>
+
+
+    <p class="simulation-note">
+
+        * Prototype currently uses simulated sensor data.
+        Physical IoT sensors can be integrated in the production version.
+
+    </p>
+
+</div>
+<script src="script.js"></script>
+
+</body>
+<!-- GRIEVANCE -->
+
+<div
+    id="grievance"
+    class="dashboard-section hidden">
+
+    <div class="page-heading">
+
+        <div>
+
+            <h1>
+                ⚖️ Grievance Support
+            </h1>
+
+            <p>
+                Raise and track issues related to transactions.
+            </p>
+
+        </div>
+
+        <span class="live-badge">
+            ✓ TRANSPARENT PROCESS
+        </span>
+
+    </div>
+
+
+    <!-- GRIEVANCE FORM -->
+
+    <div class="grievance-layout">
+
+
+        <div class="panel">
+
+            <h2>
+                Raise a Grievance
+            </h2>
+
+            <p class="form-description">
+                Report payment, quality, delivery or
+                transaction-related issues.
+            </p>
+
+
+            <div class="input-group grievance-input">
+
+                <label>
+                    Transaction ID
+                </label>
+
+                <input
+                    type="text"
+                    id="grievanceTransaction"
+                    value="KS-2026-00127">
+
+            </div>
+
+
+            <div class="input-group grievance-input">
+
+                <label>
+                    Issue Type
+                </label>
+
+                <select id="grievanceType">
+
+                    <option>
+                        Payment Delay
+                    </option>
+
+                    <option>
+                        Quality Dispute
+                    </option>
+
+                    <option>
+                        Quantity Mismatch
+                    </option>
+
+                    <option>
+                        Delivery Issue
+                    </option>
+
+                    <option>
+                        Buyer Issue
+                    </option>
+
+                    <option>
+                        Other
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="input-group grievance-input">
+
+                <label>
+                    Describe the Issue
+                </label>
+
+                <textarea
+                    id="grievanceDescription"
+                    placeholder="Describe your issue..."
+                    rows="5"></textarea>
+
+            </div>
+
+
+            <button
+                class="primary-btn"
+                onclick="submitGrievance()">
+
+                📩 Submit Grievance
+
+            </button>
+
+        </div>
+
+
+        <!-- GRIEVANCE STATUS -->
+
+        <div class="panel">
+
+            <h2>
+                📋 Grievance Status
+            </h2>
+
+
+            <div
+                id="grievanceStatus"
+                class="grievance-status">
+
+                <div class="grievance-icon">
+                    ✓
+                </div>
+
+                <div>
+
+                    <strong>
+                        No active grievance
+                    </strong>
+
+                    <p>
+                        Your submitted issues will
+                        appear here.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="grievance-process">
+
+                <div class="process-item active">
+                    <span>1</span>
+                    Submit
+                </div>
+
+                <div class="process-item">
+                    <span>2</span>
+                    Review
+                </div>
+
+                <div class="process-item">
+                    <span>3</span>
+                    Resolution
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- TRANSPARENCY -->
+
+    <div class="grievance-info">
+
+        <div>
+            🔐
+            <strong>
+                Transaction Linked
+            </strong>
+            <p>
+                Every grievance is connected
+                to a transaction.
+            </p>
+        </div>
+
+
+        <div>
+            📝
+            <strong>
+                Digital Record
+            </strong>
+            <p>
+                Complaints remain digitally
+                traceable.
+            </p>
+        </div>
+
+
+        <div>
+            🤝
+            <strong>
+                Fair Resolution
+            </strong>
+            <p>
+                Helps farmers and buyers
+                resolve disputes transparently.
+            </p>
+        </div>
+
+    </div>
+
+</div>
